@@ -16,34 +16,31 @@
  */
 package org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar;
 
-import org.jboss.shrinkwrap.descriptor.api.Descriptor;
-
+import java.util.Date;
 
 /**
  * @author "Davide D'Alto"
  * @version $Revision: $
+ *
  */
-public interface EjbJarDescriptor extends Descriptor
+public interface TimerDescriptor extends SessionDescriptor
 {
-   
-   EjbJarDescriptor idEjbJar(String id);
-   
-   EjbJarDescriptor metadataComplete();
-   
-   EjbJarDescriptor notMetaDataComplete();
-   
-   EjbJarDescriptor version(String version);
+   ScheduleTimerDescriptor schedule();
 
-   EjbJarDescriptor moduleName(String moduleName);
+   ScheduleTimerDescriptor schedule(String id);
+
+   TimerDescriptor description(String... descriptions);
+
+   TimerDescriptor persistent();
+
+   TimerDescriptor notPersistent();
+
+   TimerDescriptor timezone(String timezone);
+
+   TimerDescriptor info(String info);
    
-   DisplayNameDescriptor displayName(String name);
+   TimerDescriptor start(Date start);
    
-   IconDescriptor icon();
-
-   DescriptionDescriptor description(String description);
-
-   EjbJarDescriptor ejbClientJar(String path);
-
-   EnterpriseBeansDescriptor enterpriseBeans();
-
+   TimerDescriptor end(Date end);
+   
 }

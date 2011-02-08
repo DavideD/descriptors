@@ -14,36 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar;
-
-import org.jboss.shrinkwrap.descriptor.api.Descriptor;
-
+package org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejb.dummy;
 
 /**
  * @author "Davide D'Alto"
  * @version $Revision: $
+ *
  */
-public interface EjbJarDescriptor extends Descriptor
+public class Dummy2
 {
-   
-   EjbJarDescriptor idEjbJar(String id);
-   
-   EjbJarDescriptor metadataComplete();
-   
-   EjbJarDescriptor notMetaDataComplete();
-   
-   EjbJarDescriptor version(String version);
-
-   EjbJarDescriptor moduleName(String moduleName);
-   
-   DisplayNameDescriptor displayName(String name);
-   
-   IconDescriptor icon();
-
-   DescriptionDescriptor description(String description);
-
-   EjbJarDescriptor ejbClientJar(String path);
-
-   EnterpriseBeansDescriptor enterpriseBeans();
 
 }

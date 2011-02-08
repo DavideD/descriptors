@@ -14,36 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar;
-
-import org.jboss.shrinkwrap.descriptor.api.Descriptor;
-
+package org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar;
 
 /**
  * @author "Davide D'Alto"
  * @version $Revision: $
+ *
  */
-public interface EjbJarDescriptor extends Descriptor
+public enum SessionType
 {
+   STATEFUL("Stateful"),
+   STATELESS("Stateless");
    
-   EjbJarDescriptor idEjbJar(String id);
+   private final String type;
    
-   EjbJarDescriptor metadataComplete();
-   
-   EjbJarDescriptor notMetaDataComplete();
-   
-   EjbJarDescriptor version(String version);
+   SessionType(String type) {
+      this.type = type;
+   }
 
-   EjbJarDescriptor moduleName(String moduleName);
+   public String getType()
+   {
+      return type;
+   }
    
-   DisplayNameDescriptor displayName(String name);
-   
-   IconDescriptor icon();
-
-   DescriptionDescriptor description(String description);
-
-   EjbJarDescriptor ejbClientJar(String path);
-
-   EnterpriseBeansDescriptor enterpriseBeans();
-
 }

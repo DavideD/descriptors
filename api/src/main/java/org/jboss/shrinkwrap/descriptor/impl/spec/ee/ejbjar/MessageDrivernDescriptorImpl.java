@@ -16,21 +16,8 @@
  */
 package org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar;
 
-import java.io.OutputStream;
-
-import org.jboss.shrinkwrap.descriptor.api.DescriptorExportException;
-import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.DescriptionDescriptor;
-import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.DisplayNameDescriptor;
-import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.EjbJarDescriptor;
-import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.EnterpriseBeansDescriptor;
-import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.EntityDescriptor;
-import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.IconDescriptor;
 import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.MessageDrivenDescriptor;
-import org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar.SessionDescriptor;
 import org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar.javaee.MessageDrivenBeanType;
-import org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar.javaee.SessionBeanType;
-
-import com.sun.mail.imap.protocol.ENVELOPE;
 
 /**
  * @author "Davide D'Alto"

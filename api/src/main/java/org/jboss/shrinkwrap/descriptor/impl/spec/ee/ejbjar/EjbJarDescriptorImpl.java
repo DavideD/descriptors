@@ -45,10 +45,13 @@ public class EjbJarDescriptorImpl extends SchemaDescriptorImplBase<EjbJarModel> 
       this.ejbJarModel = ejbJarModel;
    }
 
-   private org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar.javaee.String convertToXmlString(String moduleName)
+   org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar.javaee.String convertToXmlString(String value)
    {
+//      if (value == null)
+//         return null;
+      
       org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar.javaee.String stringXml = new org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar.javaee.String();
-      stringXml.setValue(moduleName);
+      stringXml.setValue(value);
       return stringXml;
    }
 
@@ -78,6 +81,8 @@ public class EjbJarDescriptorImpl extends SchemaDescriptorImplBase<EjbJarModel> 
    {
       return ejbJarModel;
    }
+   
+   
 
    @Override
    public EjbJarDescriptor moduleName(String moduleName)
@@ -115,5 +120,33 @@ public class EjbJarDescriptorImpl extends SchemaDescriptorImplBase<EjbJarModel> 
    public EnterpriseBeansDescriptor enterpriseBeans()
    {     
       return new EnterpriseBeansDescriptorImpl(getSchemaModel());
+   }
+
+   @Override
+   public EjbJarDescriptor idEjbJar(String id)
+   {
+      ejbJarModel.setId(id);
+      return this;
+   }
+
+   @Override
+   public EjbJarDescriptor metadataComplete()
+   {
+      ejbJarModel.setMetadataComplete(Boolean.TRUE);
+      return this;
+   }
+
+   @Override
+   public EjbJarDescriptor notMetaDataComplete()
+   {
+      ejbJarModel.setMetadataComplete(Boolean.FALSE);
+      return this;
+   }
+
+   @Override
+   public EjbJarDescriptor version(String version)
+   {
+      ejbJarModel.setVersion(version);
+      return this;
    }
 }

@@ -4,7 +4,7 @@
  * by the @authors tag. See the copyright.txt in the distribution for a
  * full listing of individual contributors.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")(int value);
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -16,34 +16,24 @@
  */
 package org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar;
 
-import org.jboss.shrinkwrap.descriptor.api.Descriptor;
-
-
 /**
  * @author "Davide D'Alto"
  * @version $Revision: $
+ *
  */
-public interface EjbJarDescriptor extends Descriptor
+public interface ScheduleTimerDescriptor extends TimerDescriptor
 {
-   
-   EjbJarDescriptor idEjbJar(String id);
-   
-   EjbJarDescriptor metadataComplete();
-   
-   EjbJarDescriptor notMetaDataComplete();
-   
-   EjbJarDescriptor version(String version);
+   ScheduleTimerDescriptor second(int value);
 
-   EjbJarDescriptor moduleName(String moduleName);
-   
-   DisplayNameDescriptor displayName(String name);
-   
-   IconDescriptor icon();
+   ScheduleTimerDescriptor minute(int value);
 
-   DescriptionDescriptor description(String description);
+   ScheduleTimerDescriptor hour(int value);
 
-   EjbJarDescriptor ejbClientJar(String path);
+   ScheduleTimerDescriptor dayOfMonth(int value);
 
-   EnterpriseBeansDescriptor enterpriseBeans();
+   ScheduleTimerDescriptor month(int value);
 
+   ScheduleTimerDescriptor dayOfWeek(int value);
+
+   ScheduleTimerDescriptor year(int value);
 }

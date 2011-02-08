@@ -16,7 +16,7 @@
  */
 package org.jboss.shrinkwrap.descriptor.api.spec.ee.ejbjar;
 
-
+import org.jboss.shrinkwrap.descriptor.impl.spec.ee.ejbjar.SessionType;
 
 /**
  * @author "Davide D'Alto"
@@ -28,7 +28,7 @@ public interface SessionDescriptor extends EnterpriseBeansDescriptor
 
    SessionDescriptor ejbName(String name);
 
-   SessionDescriptor mappedName(String expected);
+   SessionDescriptor mappedName(String name);
 
    SessionDescriptor home(Class<?> class1);
 
@@ -37,5 +37,25 @@ public interface SessionDescriptor extends EnterpriseBeansDescriptor
    SessionDescriptor localHome(Class<?> class1);
 
    SessionDescriptor local(Class<?> class1);
+
+   SessionDescriptor businnessRemote(Class<?>... classes);
+
+   SessionDescriptor businnessLocal(Class<?>... classes);
+
+   SessionDescriptor localBean();
+   
+   SessionDescriptor serviceEndpoint(Class<?> class1);
+
+   SessionDescriptor ejbClass(Class<?> class1);
+
+   SessionDescriptor sessionType(SessionType type);
+
+   SessionDescriptor statefulTimeout(int value, String unit);
+
+   SessionDescriptor timeoutMehod(String name, String... params);
+
+   TimerDescriptor timer();
+   
+   TimerDescriptor timer(String id);
 
 }
