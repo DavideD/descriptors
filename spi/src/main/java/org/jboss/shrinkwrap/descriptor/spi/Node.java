@@ -163,6 +163,18 @@ public class Node
    }
 
    /**
+    * Remove a named attribute.<br/>
+    *
+    * @param name The attribute name
+    * @return This {@link Node}
+    */
+   public Node removeAttribute(final String name)
+   {
+      this.attributes.remove(name);
+      return this;
+   }
+
+   /**
     * Get a named attribute.<br/>
     * 
     * @param name The attribute name

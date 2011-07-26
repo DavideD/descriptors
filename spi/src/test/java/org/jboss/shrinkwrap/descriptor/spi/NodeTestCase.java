@@ -158,6 +158,24 @@ public class NodeTestCase
    }
 
    @Test
+   public void shouldBeAbleToRemoveAttribute() throws Exception
+   {
+      Node root = new Node(ROOT_NAME)
+               .attribute(ATTR_NAME, ATTR_VALUE);
+      Map<String, String> attributes = root.getAttributes();
+      
+      Assert.assertTrue(
+            ATTR_NAME + " should exist",
+            attributes.containsKey(ATTR_NAME));
+
+      root.removeAttribute(ATTR_NAME);
+
+      Assert.assertFalse(
+               ATTR_NAME + " should be removed",
+               attributes.containsKey(ATTR_NAME));
+   }
+
+   @Test
    public void shouldBeAbleToReadAndWriteAttributeObject() throws Exception
    {
       Node root = new Node(ROOT_NAME)
